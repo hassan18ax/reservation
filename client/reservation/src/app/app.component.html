@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <button mat-button routerLink="/">My App</button>
+  <span class="example-spacer"></span>
+  <button *ngIf="isLoggedIn" mat-button routerLink="/users">Users</button>
+  <button *ngIf="isLoggedIn" mat-button routerLink="/users-table">Users Table</button>
+  <button *ngIf="isLoggedIn" mat-button routerLink="/products">Products</button>
+  <button *ngIf="!isLoggedIn" mat-button routerLink="/register">
+    Register
+  </button>
+  <button *ngIf="!isLoggedIn" mat-button routerLink="/login">Login</button>
+  <button *ngIf="isLoggedIn" mat-button (click)="logout()">Logout</button>
+</mat-toolbar>
+<router-outlet></router-outlet>
